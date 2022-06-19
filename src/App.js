@@ -1,8 +1,8 @@
 import './App.css';
 import HomePage from './../src/pages/homepage.component.jsx';
-import { Route, Router, Routes, Link } from 'react-router-dom';
+import { Route, Router, Routes, Link, Switch } from 'react-router-dom';
 import ShopPage from './pages/shop/shop.component';
-
+import Header from './components/header/header.component';
 const HatsPage = (props)=>{
   console.log(props);
 return(<div>
@@ -26,9 +26,11 @@ const DetailsPage = props=>(
 function App() {
   return (
     <div >
-      
+      <Header />
+      <Switch>  
       <Route exact path='/' component={HomePage} />
       <Route exact path='/shop' component={ShopPage} />
+      </Switch>
       
     </div>
   );
